@@ -1,65 +1,62 @@
-.buttonfreeze{
-	visibility: hidden;
-}
-
-.webcamsource{
+.webcam{
 	width: 100%;
     height: auto;
 	max-height:100%;
 	max-width:100%;
 	border-radius: 25px;
-	border: 2px solid #73AD21; 
 	object-fit: fill;
 	-webkit-transform: scaleX(-1);
 	transform: scaleX(-1);
 
 }
 
-#webcamcanvassource{
-	width: 100%;
-    height: auto;
-	max-height:100%;
-	max-width:100%;
-	border-radius: 25px;
+#webcam_original{
+	border: 2px solid #73AD21; 
+}
+
+#webcam_canvas{
 	border: 2px solid pink; 
-	object-fit: fill;
-	-webkit-transform: scaleX(-1);
-	transform: scaleX(-1);
-
 }
 
-#webcamcanvasdiv{
-    position: absolute;
-    bottom : 0;
-    right: 0;
-    /*z-index: 2;*/
-    width:  20%;
-    height: 30%;
-	/*background-color: red;*/
+#webcam_freeze{
+	border: 2px solid blue; 
+	/*visibility: hidden;*/
 }
 
-.webcamfreeze{
-    height: auto;
-	width: 100%;
-	max-height:100%;
-	max-width:100%; 
-	border-radius: 25px;
-	border: 2px solid #73AD21; 
-	-webkit-transform: scaleX(-1);
- 	transform: scaleX(-1);
-	visibility: hidden;
-}
+
+
 
 .webcamframe{
-    position: absolute;
-    top: 0;
-    right: 0;
-    /*z-index: 2;*/
-    width:  20%;
-    height: 30%;
 	/*background-color: red;*/
+    /*z-index: 2;*/
+    position: absolute;
+    right: 0;
+    width:  20%;
+    height: 20%;
 }
 
+
+#webcamframe_freeze{
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#webcamframe_original{
+    top : 0;
+}
+
+#webcamframe_skeleton{
+    bottom : 0;
+}
+
+
+
+#button_freeze{
+	float: right;
+	/*visibility: hidden;*/
+}
 
 .ytframebg{
 
@@ -79,9 +76,7 @@ display: none;
 
 
 body {
-	
 	margin:0px;
 	padding:0px;
 	overflow:hidden;
-	
 }

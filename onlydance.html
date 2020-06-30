@@ -23,7 +23,7 @@
 		<script src="jquery.mb.YTPlayer.min.js"></script>
 		<script> 
 			jQuery(function(){
-		      jQuery("#bgndVideo").YTPlayer();
+		      //jQuery("#bgndVideo").YTPlayer();
 		    });
 		</script>
 	</head>
@@ -33,16 +33,18 @@
 		<!--https://github.com/pupunzi/jquery.mb.YTPlayer/wiki!-->
 		<div id="bgndVideo" class="ytframebg" data-property="{videoURL:'http://youtu.be/n4tK7LYFxI0',containment:'body',autoPlay:true, mute:false, startAt:0, opacity:1, optimizeDisplay:false,showControls: false }"></div>
 
-			<div class="webcamframe">
-				<!--
-				<img class='webcamsource' src="webcam.png">
-				!-->
-				<video id="webcam" class='webcamsource' autoplay ></video>
-				<canvas id="canvas" class='webcamfreeze'></canvas>
-				<button id="snap" class="buttonfreeze">Freeze</button>
+			<div id='webcamframe_original' class="webcamframe">
+				<!--<img class='webcamsource' src="webcam.png">!-->
+				<video  id='webcam_original' class='webcam' autoplay ></video>
+			</div>
+
+			<div id='webcamframe_freeze' class="webcamframe">
+				<canvas id='webcam_freeze' class='webcam'></canvas>
+				<button id="button_freeze">Freeze</button>
 			</div>
 			
-			<div id='webcamcanvasdiv'></div>
+			<div id='webcamframe_skeleton' class="webcamframe">
+			</div>
 			
 			
 			<button id='PauseEverything' onclick="PauseEverything();">PAUSE</button>

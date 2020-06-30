@@ -11,9 +11,9 @@ let skeleton;
 
 function setup() {
   let cnv = createCanvas(640, 480);
-  cnv.id('webcamcanvassource');
-  cnv.class('webcamcanvasdiv');
-  cnv.parent('webcamcanvasdiv');
+  cnv.id('webcam_canvas');
+  cnv.class('webcam');
+  cnv.parent('webcamframe_skeleton');
 
   video = createCapture(VIDEO);
   video.hide();

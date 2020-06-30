@@ -2,9 +2,9 @@
 // Put event listeners into place
 window.addEventListener("DOMContentLoaded", function() {
 	// Grab elements, create settings, etc.
-    var canvas = document.getElementById('canvas');
+    var canvas = document.getElementById('webcam_freeze');
     var context = canvas.getContext('2d');
-    var webcam = document.getElementById('webcam');
+    var webcam = document.getElementById('webcam_original');
     var mediaConfig =  { video: true };
     var errBack = function(e) {
     	console.log('An error has occurred!', e)
@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", function() {
 	}
 
 	// Trigger photo take
-	document.getElementById('snap').addEventListener('click', function() {
+	document.getElementById('button_freeze').addEventListener('click', function() {
 		//context.drawImage(webcam, 0, 0, 100, 100);
 		context.drawImage(webcam, 0, 0, canvas.width, canvas.height)
 
@@ -52,7 +52,7 @@ function PauseEverything() {
 	$("#PauseEverything").hide();
 	$("#ResumeEverything").show();
 	//$(".webcamsource").hide();
-	$(".webcamsource").css("filter", "blur(1px) grayscale(100%)");
+	$(".webcam").css("filter", "blur(1px) grayscale(100%)");
 	$('#bgndVideo').YTPToggleFilter('blur', 3);
 	$('#bgndVideo').YTPToggleFilter('grayscale', 100);
 	$('#bgndVideo').YTPPause();
@@ -62,7 +62,7 @@ function ResumeEverything() {
 	$("#PauseEverything").show();
 	$("#ResumeEverything").hide();
 	//$(".webcamsource").show();
-	$(".webcamsource").css("filter", "blur(0px) grayscale(0%)");
+	$(".webcam").css("filter", "blur(0px) grayscale(0%)");
 	$('#bgndVideo').YTPToggleFilter('blur', 0);
 	$('#bgndVideo').YTPToggleFilter('grayscale', 100);
 	$('#bgndVideo').YTPPlay();
@@ -72,7 +72,7 @@ function ResumeEverything() {
 function changevideo(URL){
 	$("#PauseEverything").show();
 	$("#ResumeEverything").hide();
-	$(".webcamsource").css("filter", "");
+	$(".webcam").css("filter", "");
 	$('#bgndVideo').YTPChangeVideo({videoURL: URL, mute:false, addRaster:false});
 	$('#bgndVideo').YTPToggleFilter('blur', 0);
 	$('#bgndVideo').YTPToggleFilter('grayscale', 100);
