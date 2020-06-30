@@ -23,7 +23,7 @@
 		<script src="jquery.mb.YTPlayer.min.js"></script>
 		<script> 
 			jQuery(function(){
-		      //jQuery("#bgndVideo").YTPlayer();
+		      jQuery("#bgndVideo").YTPlayer();
 		    });
 		</script>
 	</head>
@@ -38,10 +38,16 @@
 				<video  id='webcam_original' class='webcam' autoplay ></video>
 			</div>
 
+			
+			<div id='webcamframe_fake_video' class="webcamframe">
+				<video src='test.mp4' id='webcam_fake_video' class='webcam' autoplay></video>
+			</div>
+
 			<div id='webcamframe_freeze' class="webcamframe">
 				<canvas id='webcam_freeze' class='webcam'></canvas>
 				<button id="button_freeze">Freeze</button>
 			</div>
+			
 			
 			<div id='webcamframe_skeleton' class="webcamframe">
 			</div>

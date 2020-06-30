@@ -10,6 +10,10 @@
 
 }
 
+#webcam_fake_video{
+	border: 2px solid #73AD21; 
+}
+
 #webcam_original{
 	border: 2px solid #73AD21; 
 }
@@ -20,7 +24,6 @@
 
 #webcam_freeze{
 	border: 2px solid blue; 
-	/*visibility: hidden;*/
 }
 
 
@@ -33,6 +36,12 @@
     right: 0;
     width:  20%;
     height: 20%;
+}
+
+#webcamframe_fake_video{
+    top : 0;
+	left:0;
+    bottom : 0;
 }
 
 
@@ -55,7 +64,6 @@
 
 #button_freeze{
 	float: right;
-	/*visibility: hidden;*/
 }
 
 .ytframebg{
@@ -74,6 +82,9 @@ display: none;
 
 }
 
+.hidden{
+	visibility: hidden;
+}
 
 body {
 	margin:0px;

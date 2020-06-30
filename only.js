@@ -39,9 +39,24 @@ window.addEventListener("DOMContentLoaded", function() {
 
 	// Trigger photo take
 	document.getElementById('button_freeze').addEventListener('click', function() {
-		//context.drawImage(webcam, 0, 0, 100, 100);
-		context.drawImage(webcam, 0, 0, canvas.width, canvas.height)
-
+		try {
+			context.drawImage(webcam_canvas, 0, 0, canvas.width, canvas.height)
+		}
+		catch (e) {
+			console.log(e);
+			try {
+				context.drawImage(webcam, 0, 0, canvas.width, canvas.height)
+			}
+			catch (f) {
+				console.log(f);
+				try {
+					context.drawImage(webcam_fake_video, 0, 0, canvas.width, canvas.height)
+				}
+				catch (g) {
+					console.log(g);
+				}
+			}
+		}
 	});
 }, false);
 

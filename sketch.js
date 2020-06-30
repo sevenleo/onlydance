@@ -4,6 +4,9 @@
 // https://youtu.be/OIo-DIOkNVg
 // https://editor.p5js.org/codingtrain/sketches/ULA97pJXR
 
+//https://p5js.org/examples/
+
+
 let video;
 let poseNet;
 let pose;
@@ -16,6 +19,8 @@ function setup() {
   cnv.parent('webcamframe_skeleton');
 
   video = createCapture(VIDEO);
+  //video =  createVideo("http://127.0.0.1:8000/test.mp4");
+
   video.hide();
   poseNet = ml5.poseNet(video, modelLoaded);
   poseNet.on('pose', gotPoses);
