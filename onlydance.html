@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>OnlyDance 2020</title>
+
+		<!-- local !-->
+		<script type="text/javascript" src="only.js"></script>
+		<link href="only.css" rel="stylesheet">
+
+		<!-- jquery !-->
+		<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+
+		<!-- sketch skeleton! -->
+		<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/addons/p5.sound.min.js"></script>
+		<script src="https://unpkg.com/ml5@0.4.2/dist/ml5.min.js"></script>
+
+
+		<!-- YTplayer !-->
+		<link href="jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+		<script src="jquery.mb.YTPlayer.min.js"></script>
+		<script> 
+			jQuery(function(){
+		      jQuery("#bgndVideo").YTPlayer();
+		    });
+		</script>
+	</head>
+
+	<body>
+		<!--https://www.jqueryscript.net/popular/!-->
+		<!--https://github.com/pupunzi/jquery.mb.YTPlayer/wiki!-->
+		<div id="bgndVideo" class="ytframebg" data-property="{videoURL:'http://youtu.be/n4tK7LYFxI0',containment:'body',autoPlay:true, mute:false, startAt:0, opacity:1, optimizeDisplay:false,showControls: false }"></div>
+
+			<div class="webcamframe">
+				<!--
+				<img class='webcamsource' src="webcam.png">
+				!-->
+				<video id="webcam" class='webcamsource' autoplay ></video>
+				<canvas id="canvas" class='webcamfreeze'></canvas>
+				<button id="snap" class="buttonfreeze">Freeze</button>
+			</div>
+			
+			<div id='webcamcanvasdiv'></div>
+			
+			
+			<button id='PauseEverything' onclick="PauseEverything();">PAUSE</button>
+			<button id='ResumeEverything' onclick="ResumeEverything();">RESUME</button>
+			<button id='changevideo' onclick="changevideo('https://www.youtube.com/watch?v=CycRQkzBfkM')">ChangeVideo</button>
+			<script src="sketch.js"></script>
+	</body>
+</html>

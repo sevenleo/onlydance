@@ -15,6 +15,29 @@
 
 }
 
+#webcamcanvassource{
+	width: 100%;
+    height: auto;
+	max-height:100%;
+	max-width:100%;
+	border-radius: 25px;
+	border: 2px solid pink; 
+	object-fit: fill;
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+
+}
+
+#webcamcanvasdiv{
+    position: absolute;
+    bottom : 0;
+    right: 0;
+    /*z-index: 2;*/
+    width:  20%;
+    height: 30%;
+	/*background-color: red;*/
+}
+
 .webcamfreeze{
     height: auto;
 	width: 100%;
