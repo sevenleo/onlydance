@@ -5,7 +5,8 @@
 	<title>OnlyDance 2020 - https://www.youtube.com/watch?v=n4tK7LYFxI0</title>
 	<script type="text/javascript" src="only.js"></script>
 	<link href="only.css" rel="stylesheet">
-	<script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+	<!-- jquery !-->
+	<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
    </head>
 
 
@@ -13,19 +14,24 @@
 
 		<div class="fllscrn">
 			<div class="webcamframe">
-				<img class='webcamsource' src="webcam.png">
+				<!--img class='webcamsource' src="webcam.png"!-->
+
+				<video id="webcam" class='webcamsource' autoplay ></video>
+				<canvas id="canvas" class='webcamfreeze'></canvas>
+				<button id="snap" class="buttonfreeze">Freeze</button>
+
+
 			</div>
 			
 			<iframe 
-			class='ytframe'
-			src="https://www.youtube.com/embed/n4tK7LYFxI0?autoplay=1&controls=0&mute=1&modestbranding=1&autohide=1&showinfo=0&iv_load_policy=3&rel=0"
-			frameborder="0" 
-			height="100%" 
-			width="100%">
+				class='ytframe'
+				src="https://www.youtube.com/embed/n4tK7LYFxI0?autoplay=1&controls=1&mute=1&modestbranding=1&autohide=1&showinfo=0&iv_load_policy=3&rel=0"
+				frameborder="0" 
+				height="100%" 
+				width="100%"
+			>
 			</iframe>
 		</div>
-
-
 
 
 	</body>

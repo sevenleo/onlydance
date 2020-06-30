@@ -1,7 +1,46 @@
-$(function(){
-  $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
 
-  $(window).resize(function(){
-    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
-  });
-});
+// Put event listeners into place
+window.addEventListener("DOMContentLoaded", function() {
+	// Grab elements, create settings, etc.
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    var webcam = document.getElementById('webcam');
+    var mediaConfig =  { video: true };
+    var errBack = function(e) {
+    	console.log('An error has occurred!', e)
+    };
+
+	// Put webcam listeners into place
+    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia(mediaConfig).then(function(stream) {
+			//webcam.src = window.URL.createObjectURL(stream);
+			webcam.srcObject = stream;
+            webcam.play();
+        });
+    }
+
+    /* Legacy code below! */
+    else if(navigator.getUserMedia) { // Standard
+		navigator.getUserMedia(mediaConfig, function(stream) {
+			webcam.src = stream;
+			webcam.play();
+		}, errBack);
+	} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+		navigator.webkitGetUserMedia(mediaConfig, function(stream){
+			webcam.src = window.webkitURL.createObjectURL(stream);
+			webcam.play();
+		}, errBack);
+	} else if(navigator.mozGetUserMedia) { // Mozilla-prefixed
+		navigator.mozGetUserMedia(mediaConfig, function(stream){
+			webcam.src = window.URL.createObjectURL(stream);
+			webcam.play();
+		}, errBack);
+	}
+
+	// Trigger photo take
+	document.getElementById('snap').addEventListener('click', function() {
+		//context.drawImage(webcam, 0, 0, 100, 100);
+		context.drawImage(webcam, 0, 0, canvas.width, canvas.height)
+
+	});
+}, false);
