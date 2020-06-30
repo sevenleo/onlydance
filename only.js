@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    /* Legacy code below! */
+    // Legacy code below! 
     else if(navigator.getUserMedia) { // Standard
 		navigator.getUserMedia(mediaConfig, function(stream) {
 			webcam.src = stream;
@@ -44,3 +44,36 @@ window.addEventListener("DOMContentLoaded", function() {
 
 	});
 }, false);
+
+
+
+
+function PauseEverything() {
+	$("#PauseEverything").hide();
+	$("#ResumeEverything").show();
+	//$(".webcamsource").hide();
+	$(".webcamsource").css("filter", "blur(1px) grayscale(100%)");
+	$('#bgndVideo').YTPToggleFilter('blur', 3);
+	$('#bgndVideo').YTPToggleFilter('grayscale', 100);
+	$('#bgndVideo').YTPPause();
+}
+
+function ResumeEverything() {
+	$("#PauseEverything").show();
+	$("#ResumeEverything").hide();
+	//$(".webcamsource").show();
+	$(".webcamsource").css("filter", "blur(0px) grayscale(0%)");
+	$('#bgndVideo').YTPToggleFilter('blur', 0);
+	$('#bgndVideo').YTPToggleFilter('grayscale', 100);
+	$('#bgndVideo').YTPPlay();
+}
+
+
+function changevideo(URL){
+	$("#PauseEverything").show();
+	$("#ResumeEverything").hide();
+	$(".webcamsource").css("filter", "");
+	$('#bgndVideo').YTPChangeVideo({videoURL: URL, mute:false, addRaster:false});
+	$('#bgndVideo').YTPToggleFilter('blur', 0);
+	$('#bgndVideo').YTPToggleFilter('grayscale', 100);
+}

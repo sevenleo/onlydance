@@ -5,38 +5,37 @@
 	<title>OnlyDance 2020 - https://www.youtube.com/watch?v=n4tK7LYFxI0</title>
 	<script type="text/javascript" src="only.js"></script>
 	<link href="only.css" rel="stylesheet">
-	<!-- jquery !-->
+	
 	<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+
+	<link href="jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+	<script src="jquery.mb.YTPlayer.min.js"></script>
+	<script> 
+		jQuery(function(){
+	      jQuery("#bgndVideo").YTPlayer();
+	    });
+	</script>
    </head>
 
 
 	<body>
+		<!--https://www.jqueryscript.net/popular/!-->
+		<!--https://github.com/pupunzi/jquery.mb.YTPlayer/wiki!-->
+		<div id="bgndVideo" class="ytframebg" data-property="{videoURL:'http://youtu.be/n4tK7LYFxI0',containment:'body',autoPlay:true, mute:false, startAt:0, opacity:1, optimizeDisplay:false,showControls: false }"></div>
 
-		<div class="fllscrn">
 			<div class="webcamframe">
-				<!--img class='webcamsource' src="webcam.png"!-->
-
+				<!--
+				<img class='webcamsource' src="webcam.png">
+				!-->
 				<video id="webcam" class='webcamsource' autoplay ></video>
 				<canvas id="canvas" class='webcamfreeze'></canvas>
 				<button id="snap" class="buttonfreeze">Freeze</button>
-
-
 			</div>
 			
-			<iframe 
-				class='ytframe'
-				src="https://www.youtube.com/embed/n4tK7LYFxI0?autoplay=1&controls=1&mute=1&modestbranding=1&autohide=1&showinfo=0&iv_load_policy=3&rel=0"
-				frameborder="0" 
-				height="100%" 
-				width="100%"
-			>
-			</iframe>
-		</div>
-
+			
+			<button id='PauseEverything' onclick="PauseEverything();">PAUSE</button>
+			<button id='ResumeEverything' onclick="ResumeEverything();">RESUME</button>
+			<button id='changevideo' onclick="changevideo('https://www.youtube.com/watch?v=CycRQkzBfkM')">ChangeVideo</button>
 
 	</body>
 </html>
-
-<!--https://medium.com/swlh/how-to-access-webcam-and-take-picture-with-javascript-b9116a983d78
-https://jsfiddle.net/sendz/Bs5de/
-webcam:!-->

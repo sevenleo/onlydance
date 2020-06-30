@@ -1,7 +1,3 @@
-.fllscrn{    
-
-}
-
 .buttonfreeze{
 	visibility: hidden;
 }
@@ -14,6 +10,9 @@
 	border-radius: 25px;
 	border: 2px solid #73AD21; 
 	object-fit: fill;
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+
 }
 
 .webcamfreeze{
@@ -23,6 +22,8 @@
 	max-width:100%; 
 	border-radius: 25px;
 	border: 2px solid #73AD21; 
+	-webkit-transform: scaleX(-1);
+ 	transform: scaleX(-1);
 	visibility: hidden;
 }
 
@@ -36,30 +37,28 @@
 	/*background-color: red;*/
 }
 
-.frame{
-	/*z-index: -1;*/
-}
 
-
-.ytframe{
-	position:absolute;
-	z-index: -1;
-	overflow:hidden;
-	overflow-x:hidden;
-	overflow-y:hidden;
-	height:100%;
-	width:100%;
-	top:0px;
-	left:0px;
-	right:0px;
-	bottom:0px;
+.ytframebg{
 
 }
+
+#bgndVideo{
+
+}
+
+#ResumeEverything{
+display: none;
+}
+
+#PauseEverything{
+
+}
+
 
 body {
-	/*
+	
 	margin:0px;
 	padding:0px;
 	overflow:hidden;
-	*/
+	
 }
